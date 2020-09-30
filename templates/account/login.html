@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+    <h1>Login</h1>
+    <p>Input your username and password</p>
+    <form action="." method="post">{% csrf_token %}
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            {{ form.username }}        
+            <label for="psw"><b>Password</b></label>
+            {{ form.password }}        
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+        
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+      </form> 
+</div>
+{% endblock %}
