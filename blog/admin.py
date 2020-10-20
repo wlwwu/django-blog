@@ -9,8 +9,6 @@ class BlogArticlesAdmin(admin.ModelAdmin):
       date_hierarchy = "publish"
       ordering = ["-publish","author"]
 
-
-
 admin.site.register(BlogArticles,BlogArticlesAdmin)
 # Register your models here.
 
