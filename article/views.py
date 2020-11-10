@@ -62,8 +62,11 @@ def article_post(request):
                new_article.author = request.user
                new_article.column = request.user.article_column.get(id=request.POST['column_id'])
                new_article.save()
+               print("test---test")
                return HttpResponse("1")
-            except:
+           except Exception as inst:
+                print("test---test-1")
+                print(inst)
                 return HttpResponse("2")
         else:
             return HttpResponse("3")
